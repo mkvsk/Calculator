@@ -31,11 +31,13 @@ namespace Calculator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonPercent = new Guna.UI2.WinForms.Guna2TileButton();
+            this.buttonChangeChar = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonZero = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonDelete = new Guna.UI2.WinForms.Guna2TileButton();
             this.labelExpression = new System.Windows.Forms.Label();
             this.buttonResult = new Guna.UI2.WinForms.Guna2TileButton();
-            this.buttonCloseApp = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonOne = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonTwo = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonThree = new Guna.UI2.WinForms.Guna2TileButton();
@@ -50,9 +52,6 @@ namespace Calculator
             this.buttonMultiple = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonSubstract = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonAddition = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2TileButton2 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.buttonPercent = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,13 +60,12 @@ namespace Calculator
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.buttonPercent);
-            this.panel1.Controls.Add(this.guna2TileButton2);
+            this.panel1.Controls.Add(this.buttonChangeChar);
             this.panel1.Controls.Add(this.guna2TileButton1);
             this.panel1.Controls.Add(this.buttonZero);
             this.panel1.Controls.Add(this.buttonDelete);
             this.panel1.Controls.Add(this.labelExpression);
             this.panel1.Controls.Add(this.buttonResult);
-            this.panel1.Controls.Add(this.buttonCloseApp);
             this.panel1.Controls.Add(this.buttonOne);
             this.panel1.Controls.Add(this.buttonTwo);
             this.panel1.Controls.Add(this.buttonThree);
@@ -87,6 +85,71 @@ namespace Calculator
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 615);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonPercent
+            // 
+            this.buttonPercent.CheckedState.Parent = this.buttonPercent;
+            this.buttonPercent.CustomImages.Parent = this.buttonPercent;
+            this.buttonPercent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonPercent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonPercent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonPercent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonPercent.DisabledState.Parent = this.buttonPercent;
+            this.buttonPercent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(220)))), ((int)(((byte)(165)))));
+            this.buttonPercent.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.buttonPercent.ForeColor = System.Drawing.Color.White;
+            this.buttonPercent.HoverState.Parent = this.buttonPercent;
+            this.buttonPercent.Location = new System.Drawing.Point(197, 150);
+            this.buttonPercent.Name = "buttonPercent";
+            this.buttonPercent.ShadowDecoration.Parent = this.buttonPercent;
+            this.buttonPercent.Size = new System.Drawing.Size(60, 60);
+            this.buttonPercent.TabIndex = 27;
+            this.buttonPercent.Text = "%";
+            this.buttonPercent.Click += new System.EventHandler(this.buttonPercent_Click);
+            // 
+            // buttonChangeChar
+            // 
+            this.buttonChangeChar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonChangeChar.CheckedState.Parent = this.buttonChangeChar;
+            this.buttonChangeChar.CustomImages.Parent = this.buttonChangeChar;
+            this.buttonChangeChar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonChangeChar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonChangeChar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonChangeChar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonChangeChar.DisabledState.Parent = this.buttonChangeChar;
+            this.buttonChangeChar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonChangeChar.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.buttonChangeChar.ForeColor = System.Drawing.Color.White;
+            this.buttonChangeChar.HoverState.Parent = this.buttonChangeChar;
+            this.buttonChangeChar.Location = new System.Drawing.Point(137, 390);
+            this.buttonChangeChar.Name = "buttonChangeChar";
+            this.buttonChangeChar.ShadowDecoration.Parent = this.buttonChangeChar;
+            this.buttonChangeChar.Size = new System.Drawing.Size(60, 60);
+            this.buttonChangeChar.TabIndex = 26;
+            this.buttonChangeChar.Text = "±";
+            this.buttonChangeChar.Click += new System.EventHandler(this.buttonChangeChar_Click);
+            // 
+            // guna2TileButton1
+            // 
+            this.guna2TileButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TileButton1.CheckedState.Parent = this.guna2TileButton1;
+            this.guna2TileButton1.CustomImages.Parent = this.guna2TileButton1;
+            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2TileButton1.DisabledState.Parent = this.guna2TileButton1;
+            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.guna2TileButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2TileButton1.HoverState.Parent = this.guna2TileButton1;
+            this.guna2TileButton1.Location = new System.Drawing.Point(77, 390);
+            this.guna2TileButton1.Name = "guna2TileButton1";
+            this.guna2TileButton1.ShadowDecoration.Parent = this.guna2TileButton1;
+            this.guna2TileButton1.Size = new System.Drawing.Size(60, 60);
+            this.guna2TileButton1.TabIndex = 25;
+            this.guna2TileButton1.Text = "∙";
+            this.guna2TileButton1.Visible = false;
             // 
             // buttonZero
             // 
@@ -162,27 +225,6 @@ namespace Calculator
             this.buttonResult.TabIndex = 2;
             this.buttonResult.Text = "=";
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
-            // 
-            // buttonCloseApp
-            // 
-            this.buttonCloseApp.CheckedState.Parent = this.buttonCloseApp;
-            this.buttonCloseApp.CustomImages.Parent = this.buttonCloseApp;
-            this.buttonCloseApp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonCloseApp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonCloseApp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonCloseApp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonCloseApp.DisabledState.Parent = this.buttonCloseApp;
-            this.buttonCloseApp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.buttonCloseApp.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCloseApp.ForeColor = System.Drawing.Color.White;
-            this.buttonCloseApp.HoverState.Parent = this.buttonCloseApp;
-            this.buttonCloseApp.Location = new System.Drawing.Point(239, 3);
-            this.buttonCloseApp.Name = "buttonCloseApp";
-            this.buttonCloseApp.ShadowDecoration.Parent = this.buttonCloseApp;
-            this.buttonCloseApp.Size = new System.Drawing.Size(30, 30);
-            this.buttonCloseApp.TabIndex = 24;
-            this.buttonCloseApp.Text = "×";
-            this.buttonCloseApp.Click += new System.EventHandler(this.buttonCloseApp_Click);
             // 
             // buttonOne
             // 
@@ -480,85 +522,20 @@ namespace Calculator
             this.buttonAddition.Text = "+";
             this.buttonAddition.Click += new System.EventHandler(this.buttonAddition_Click);
             // 
-            // guna2TileButton1
-            // 
-            this.guna2TileButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TileButton1.CheckedState.Parent = this.guna2TileButton1;
-            this.guna2TileButton1.CustomImages.Parent = this.guna2TileButton1;
-            this.guna2TileButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton1.DisabledState.Parent = this.guna2TileButton1;
-            this.guna2TileButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TileButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.guna2TileButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2TileButton1.HoverState.Parent = this.guna2TileButton1;
-            this.guna2TileButton1.Location = new System.Drawing.Point(77, 390);
-            this.guna2TileButton1.Name = "guna2TileButton1";
-            this.guna2TileButton1.ShadowDecoration.Parent = this.guna2TileButton1;
-            this.guna2TileButton1.Size = new System.Drawing.Size(60, 60);
-            this.guna2TileButton1.TabIndex = 25;
-            this.guna2TileButton1.Text = "∙";
-            this.guna2TileButton1.Visible = false;
-            // 
-            // guna2TileButton2
-            // 
-            this.guna2TileButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TileButton2.CheckedState.Parent = this.guna2TileButton2;
-            this.guna2TileButton2.CustomImages.Parent = this.guna2TileButton2;
-            this.guna2TileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2TileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2TileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2TileButton2.DisabledState.Parent = this.guna2TileButton2;
-            this.guna2TileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2TileButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.guna2TileButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2TileButton2.HoverState.Parent = this.guna2TileButton2;
-            this.guna2TileButton2.Location = new System.Drawing.Point(137, 390);
-            this.guna2TileButton2.Name = "guna2TileButton2";
-            this.guna2TileButton2.ShadowDecoration.Parent = this.guna2TileButton2;
-            this.guna2TileButton2.Size = new System.Drawing.Size(60, 60);
-            this.guna2TileButton2.TabIndex = 26;
-            this.guna2TileButton2.Text = "±";
-            this.guna2TileButton2.Visible = false;
-            // 
-            // buttonPercent
-            // 
-            this.buttonPercent.CheckedState.Parent = this.buttonPercent;
-            this.buttonPercent.CustomImages.Parent = this.buttonPercent;
-            this.buttonPercent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPercent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPercent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonPercent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonPercent.DisabledState.Parent = this.buttonPercent;
-            this.buttonPercent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(220)))), ((int)(((byte)(165)))));
-            this.buttonPercent.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.buttonPercent.ForeColor = System.Drawing.Color.White;
-            this.buttonPercent.HoverState.Parent = this.buttonPercent;
-            this.buttonPercent.Location = new System.Drawing.Point(197, 150);
-            this.buttonPercent.Name = "buttonPercent";
-            this.buttonPercent.ShadowDecoration.Parent = this.buttonPercent;
-            this.buttonPercent.Size = new System.Drawing.Size(60, 60);
-            this.buttonPercent.TabIndex = 27;
-            this.buttonPercent.Text = "%";
-            this.buttonPercent.Visible = false;
-            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(264, 456);
-            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calculator";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -585,9 +562,8 @@ namespace Calculator
         private Guna.UI2.WinForms.Guna2TileButton buttonSubstract;
         private Guna.UI2.WinForms.Guna2TileButton buttonAddition;
         private System.Windows.Forms.Label labelExpression;
-        private Guna.UI2.WinForms.Guna2TileButton buttonCloseApp;
         private Guna.UI2.WinForms.Guna2TileButton buttonPercent;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton2;
+        private Guna.UI2.WinForms.Guna2TileButton buttonChangeChar;
         private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
     }
 }

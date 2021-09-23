@@ -21,11 +21,15 @@ namespace Calculator
        
         public string value1;
         public string value2;
+        public string result;
         public char mathSign;
 
         public string expression = "";
         public string emptyExpression = "";
-        public bool fillValue = false;      
+        public bool fillValue = false;
+
+        public int counter = 0;
+        public int tmp;
 
         private void buttonNull_Click(object sender, EventArgs e)
         {
@@ -103,20 +107,17 @@ namespace Calculator
                 i++;
             }
             labelExpression.Text = str;
+            result = null;
         }
-
-        private void buttonCloseApp_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
         private void buttonAddition_Click(object sender, EventArgs e)
         {
             if (fillValue) 
             {
                 calculation(); 
-            } 
+            }
 
+            counter++;
             mathSign = '+';
             value1 = labelExpression.Text;
             labelExpression.Text += "+";
@@ -167,31 +168,41 @@ namespace Calculator
             int i = value1.Length + 1;
             while (i < labelExpression.Text.Length)
             {
-                value2 += labelExpression.Text[i]; // Добавляем в переменную b, все цифры после знака
+                value2 += labelExpression.Text[i]; 
                 i++;
             }
 
             if (mathSign == '+') 
             {
-                labelExpression.Text = Convert.ToString(Convert.ToDouble(value1) 
-                    + Convert.ToDouble(value2)); 
+                result = Convert.ToString(Convert.ToDouble(value1) 
+                    + Convert.ToDouble(value2));
+                labelExpression.Text = result;
             }
             if (mathSign == '-') 
             {
-                labelExpression.Text = Convert.ToString(Convert.ToDouble(value1) 
-                    - Convert.ToDouble(value2)); 
+                result = Convert.ToString(Convert.ToDouble(value1) 
+                    - Convert.ToDouble(value2));
+                labelExpression.Text = result;
             }
             if (mathSign == '*') 
             {
-                labelExpression.Text = Convert.ToString(Convert.ToDouble(value1) 
-                    * Convert.ToDouble(value2)); 
+                result = Convert.ToString(Convert.ToDouble(value1) 
+                    * Convert.ToDouble(value2));
+                labelExpression.Text = result;
             }
             if (mathSign == '/') 
             {
-                labelExpression.Text = Convert.ToString(Convert.ToDouble(value1) 
-                    / Convert.ToDouble(value2)); 
+                result = Convert.ToString(Convert.ToDouble(value1) 
+                    / Convert.ToDouble(value2));
+                labelExpression.Text = result;
             }
-                     
+            if (mathSign == '%')
+            {   
+                result = Convert.ToString(Convert.ToDouble(value1)
+                    / 100 * Convert.ToDouble(value2));
+                labelExpression.Text = result;
+            }
+            value1 = result;
             value2 = null;
         }
 
@@ -201,6 +212,35 @@ namespace Calculator
                 calculation();
                 fillValue = false;
             }
+        }
+
+        private void buttonPercent_Click(object sender, EventArgs e)
+        {
+            if (fillValue)
+            {
+                calculation();
+            }
+
+            mathSign = '%';
+            value1 = labelExpression.Text;
+            labelExpression.Text += "%";
+            fillValue = true;
+        }
+
+        private void buttonChangeChar_Click(object sender, EventArgs e)
+        {
+            string changeChar;
+            if (labelExpression.Text[0] != '-')
+            {
+                changeChar = "-";
+                changeChar += labelExpression.Text;                
+            }
+            else
+            {
+                changeChar = "+";
+                changeChar += labelExpression.Text;
+            }
+            labelExpression.Text = changeChar;
         }
     }
 }
