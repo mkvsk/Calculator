@@ -14,11 +14,10 @@ namespace Calculator
     {
         public string value1;
         public string value2;
-        public string result;
         public char mathSign;
 
-        public string expression = "";
-        public string emptyExpression = "";
+        public string expression;
+        public static string emptyExpression = "";
         public bool fillValue = false;
 
         public int counter = 0;
@@ -27,8 +26,6 @@ namespace Calculator
         public Calculator()
         {
             InitializeComponent();
-
-            labelExpression.Text = "";
         }
        
         private void buttonNull_Click(object sender, EventArgs e)
@@ -98,17 +95,15 @@ namespace Calculator
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        {
-            string str = "";
-            byte i = 0;
-            while (i < labelExpression.Text.Length - 1) 
+        {   
+            expression = labelExpression.Text;
+            labelExpression.Text = "";
+            for (int i = 0; i < expression.Length - 1; i++) 
             {
-                str += labelExpression.Text[i];
-                i++;
-            }
-            labelExpression.Text = str;
-            result = null;
+                labelExpression.Text += expression[i];               
+            }          
         }
+
 
         private void buttonAddition_Click(object sender, EventArgs e)
         {
@@ -173,36 +168,35 @@ namespace Calculator
 
             if (mathSign == '+')
             {
-                result = Convert.ToString(Convert.ToDouble(value1)
+                value1 = Convert.ToString(Convert.ToDouble(value1)
                     + Convert.ToDouble(value2));
-                labelExpression.Text = result;
+                labelExpression.Text = value1;
             }
             if (mathSign == '-')
             {
-                result = Convert.ToString(Convert.ToDouble(value1)
+                value1 = Convert.ToString(Convert.ToDouble(value1)
                     - Convert.ToDouble(value2));
-                labelExpression.Text = result;
+                labelExpression.Text = value1;
             }
             if (mathSign == '*')
             {
-                result = Convert.ToString(Convert.ToDouble(value1)
+                value1 = Convert.ToString(Convert.ToDouble(value1)
                     * Convert.ToDouble(value2));
-                labelExpression.Text = result;
+                labelExpression.Text = value1;
             }
             if (mathSign == '/')
             {
-                result = Convert.ToString(Convert.ToDouble(value1)
+                value1 = Convert.ToString(Convert.ToDouble(value1)
                     / Convert.ToDouble(value2));
-                labelExpression.Text = result;
+                labelExpression.Text = value1;
             }
             if (mathSign == '%')
             {
-                result = Convert.ToString(Convert.ToDouble(value1)
+                value1 = Convert.ToString(Convert.ToDouble(value1)
                     / 100 * Convert.ToDouble(value2));
-                labelExpression.Text = result;
+                labelExpression.Text = value1;
             }
-             
-            value1 = result;                                  
+                                  
         }
 
         private void buttonResult_Click(object sender, EventArgs e)
@@ -238,6 +232,11 @@ namespace Calculator
                 changeChar += labelExpression.Text;
             }
             labelExpression.Text = changeChar;
+        }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+            labelExpression.Text = "";            
         }
     }
 }
