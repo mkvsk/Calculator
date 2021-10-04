@@ -16,12 +16,14 @@ namespace Calculator
         public string value2;
         public char mathSign;
 
-        public string expression;
-        public static string emptyExpression = "";
-        public bool fillValue = false;
+        public int v1;
+        public int v2;  
+                
 
-        public int counter = 0;
-        public int tmp;
+        public bool firstValueIsFilled = false;
+        public bool secondValueIsFilled = false;
+
+        public string expression;
 
         public Calculator()
         {
@@ -31,66 +33,55 @@ namespace Calculator
         private void buttonNull_Click(object sender, EventArgs e)
         {
             labelExpression.Text = null;
-            fillValue = false;
         }
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "0";
         }
 
         private void buttonOne_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "1";
         }
 
         private void buttonTwo_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "2";
         }
 
         private void buttonThree_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "3";
         }
 
         private void buttonFour_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "4";
         }
 
         private void buttonFive_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "5";
         }
 
         private void buttonSix_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "6";
         }
 
         private void buttonSeven_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "7";
         }
 
         private void buttonEight_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "8";
         }
 
         private void buttonNine_Click(object sender, EventArgs e)
         {
-            fillValue = false;
             labelExpression.Text += "9";
         }
 
@@ -104,118 +95,103 @@ namespace Calculator
             }          
         }
 
+        private void getValuesFromText()
+        {   
+                if (firstValueIsFilled == false)
+                {
+                    value1 += labelExpression.Text;
+                    firstValueIsFilled = true;  
+                    labelExpression.Text = "";
+                }
+                if (secondValueIsFilled == false)
+                {   
+                    value2 += labelExpression.Text;
+                    secondValueIsFilled = true;
+                    labelExpression.Text = "";
+                }                                     
+        }
+
+        private void doNothing() { }
 
         private void buttonAddition_Click(object sender, EventArgs e)
-        {
-           if (fillValue)
-            {
-                calc();
-            }
-            counter++;
+        {            
+            getValuesFromText(); 
             mathSign = '+';
-            value1 = labelExpression.Text;
-            labelExpression.Text += "+";
-            fillValue = true;
         }
 
         private void buttonSubstract_Click(object sender, EventArgs e)
         {
-            if (fillValue)
-            {
-                calc();
-            }
-            counter++;
             mathSign = '-';
-            value1 = labelExpression.Text;
-            labelExpression.Text += "-";
-            fillValue = true;
         }
 
         private void buttonMultiple_Click(object sender, EventArgs e)
-        {
-            if (fillValue)
-            {
-                calc();
-            }
-            counter++;
+        { 
             mathSign = '*';
-            value1 = labelExpression.Text;
-            labelExpression.Text += "*";
-            fillValue = true;
         }
 
         private void buttonDivision_Click(object sender, EventArgs e)
         {
-            if (fillValue)
-            {
-                calc();
-            }
-            counter++;
-            mathSign = '/';
-            value1 = labelExpression.Text;
-            labelExpression.Text += "/";
-            fillValue = true;
+            mathSign = '/';            
         }
 
-        public void calc()
-        {
-            int i = value1.Length + 1;
-            while (i < labelExpression.Text.Length)
-            {
-                value2 += labelExpression.Text[i];
-                i++;
-            }
+        private void calc()
+        {   
+            if (firstValueIsFilled == true && secondValueIsFilled == true)
+            {   
+               
+               //v1 = Convert.ToDouble(value1);
+               //v2 = Convert.ToDouble(value2);  
+                
+                //v1 = double.Parse(value1);
+                //v2 = double.Parse(value2);
+                //
+                //v1 = Convert.ToInt32(value1);
 
-            if (mathSign == '+')
-            {
-                value1 = Convert.ToString(Convert.ToDouble(value1)
-                    + Convert.ToDouble(value2));
-                labelExpression.Text = value1;
+                if (mathSign == '+')
+                {
+                    v1 += v2;
+
+                
+                //labelExpression.Text = value1;
+                }
+                if(mathSign == '-')
+                {
+                    //value1 -= value2;
+                }
+                if(mathSign == '*')
+                {
+                    //value1 *= value2;
+                }
+                if(mathSign == '/')
+                {
+                    //value1 /= value2;   
+                }
+                if(mathSign == '%')
+                {
+                    //value1 = value1 / 100 * value2;
+                }
+                secondValueIsFilled = false;
+
+                labelExpression.Text = Convert.ToString(v1);
+                //value1 = Convert.ToString(v1);
+                //value2 = "";
+                
             }
-            if (mathSign == '-')
+            else
             {
-                value1 = Convert.ToString(Convert.ToDouble(value1)
-                    - Convert.ToDouble(value2));
-                labelExpression.Text = value1;
-            }
-            if (mathSign == '*')
-            {
-                value1 = Convert.ToString(Convert.ToDouble(value1)
-                    * Convert.ToDouble(value2));
-                labelExpression.Text = value1;
-            }
-            if (mathSign == '/')
-            {
-                value1 = Convert.ToString(Convert.ToDouble(value1)
-                    / Convert.ToDouble(value2));
-                labelExpression.Text = value1;
-            }
-            if (mathSign == '%')
-            {
-                value1 = Convert.ToString(Convert.ToDouble(value1)
-                    / 100 * Convert.ToDouble(value2));
-                labelExpression.Text = value1;
-            }
-                                  
+                doNothing();    
+            }              
         }
 
         private void buttonResult_Click(object sender, EventArgs e)
-        {
+        {   
             calc();
-            fillValue = false;
+            labelExpression.Text = value1;
         }
 
         private void buttonPercent_Click(object sender, EventArgs e)
         {
-            if (fillValue)
-            {
-                calc();
-            }
-
-            mathSign = '%';
-            value1 = labelExpression.Text;
-            labelExpression.Text += "%";
-            fillValue = true;
+            mathSign = '%';            
         }
 
         private void buttonChangeChar_Click(object sender, EventArgs e)
@@ -236,7 +212,7 @@ namespace Calculator
 
         private void Calculator_Load(object sender, EventArgs e)
         {
-            labelExpression.Text = "";            
+            labelExpression.Text = "";
         }
     }
 }
