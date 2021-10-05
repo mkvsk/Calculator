@@ -141,37 +141,7 @@ namespace Calculator
             {   
                 String result = new DataTable().Compute(str, null).ToString();
 
-               //v1 = Convert.ToDouble(value1);
-               //v2 = Convert.ToDouble(value2);  
-                
-                //v1 = double.Parse(value1);
-                //v2 = double.Parse(value2);
-                //
-                //v1 = Convert.ToInt32(value1);
-
-                if (mathSign == '+')
-                {
-                    v1 += v2;
-
-                
-                //labelExpression.Text = value1;
-                }
-                if(mathSign == '-')
-                {
-                    //value1 -= value2;
-                }
-                if(mathSign == '*')
-                {
-                    //value1 *= value2;
-                }
-                if(mathSign == '/')
-                {
-                    //value1 /= value2;   
-                }
-                if(mathSign == '%')
-                {
-                    //value1 = value1 / 100 * value2;
-                }
+               
                 secondValueIsFilled = false;
 
                 labelExpression.Text = result;
