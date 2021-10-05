@@ -172,7 +172,10 @@ namespace Calculator
         {
             //сама доделай
             //ладно, сделаю
-            labelExpression.Text = labelExpression.Text.Remove(labelExpression.Text.Length - 1);
+            if (!String.IsNullOrEmpty(labelExpression.Text))
+            {
+                labelExpression.Text = labelExpression.Text.Remove(labelExpression.Text.Length - 1);
+            }
         }
 
         private void Calculator_Load(object sender, EventArgs e)
