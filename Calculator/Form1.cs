@@ -136,9 +136,11 @@ namespace Calculator
 
         private void calc()
         {   
+            string str  = value1 + mathSign + value2;
             if (firstValueIsFilled == true && secondValueIsFilled == true)
             {   
-               
+                String result = new DataTable().Compute(str, null).ToString();
+
                //v1 = Convert.ToDouble(value1);
                //v2 = Convert.ToDouble(value2);  
                 
@@ -172,7 +174,8 @@ namespace Calculator
                 }
                 secondValueIsFilled = false;
 
-                labelExpression.Text = Convert.ToString(v1);
+                labelExpression.Text = result;
+                //labelExpression.Text = Convert.ToString(v1);
                 //value1 = Convert.ToString(v1);
                 //value2 = "";
                 
