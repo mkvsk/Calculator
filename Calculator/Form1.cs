@@ -91,6 +91,14 @@ namespace Calculator
             // labelExpression.Text = changeChar;
         }
 
+        private void checkForClearLabel()
+        {
+            if (isNeedToClear)
+            {
+                labelExpression.Text = "";
+                isNeedToClear = false;
+            }
+        }
 
         private void buttonNull_Click(object sender, EventArgs e)
         {
@@ -102,111 +110,61 @@ namespace Calculator
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "0";
         }
 
         private void buttonOne_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "1";
         }
 
         private void buttonTwo_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "2";
         }
 
         private void buttonThree_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "3";
         }
 
         private void buttonFour_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "4";
         }
 
         private void buttonFive_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "5";
         }
 
         private void buttonSix_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "6";
         }
 
         private void buttonSeven_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "7";
         }
 
         private void buttonEight_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "8";
         }
 
         private void buttonNine_Click(object sender, EventArgs e)
         {
-            if (isNeedToClear)
-            {
-                labelExpression.Text = "";
-                isNeedToClear = false;
-            }
-
+            checkForClearLabel();
             labelExpression.Text += "9";
         }
 
