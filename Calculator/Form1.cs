@@ -33,14 +33,11 @@ namespace Calculator
                 else
                 {
                     sb.Append(labelExpression.Text);
-                    labelExpression.Text = new DataTable().Compute(sb.ToString(), null).ToString();;
+                    labelExpression.Text = new DataTable().Compute(sb.ToString(), null).ToString();
                     valueTemp = labelExpression.Text;
                     sb.Clear();
-                    if (!String.IsNullOrEmpty(mathSign.ToString()))
-                    {
-                        sb.Append(valueTemp);
-                        sb.Append(mathSign);
-                    }
+                    sb.Append(valueTemp);
+                    sb.Append(mathSign);
                     isNeedToClear = true;
                 }
             }
