@@ -50,7 +50,7 @@ namespace Calculator
             this.buttonNull = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonDivision = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonMultiple = new Guna.UI2.WinForms.Guna2TileButton();
-            this.buttonSubstract = new Guna.UI2.WinForms.Guna2TileButton();
+            this.buttonSubtract = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonAddition = new Guna.UI2.WinForms.Guna2TileButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +78,7 @@ namespace Calculator
             this.panel1.Controls.Add(this.buttonNull);
             this.panel1.Controls.Add(this.buttonDivision);
             this.panel1.Controls.Add(this.buttonMultiple);
-            this.panel1.Controls.Add(this.buttonSubstract);
+            this.panel1.Controls.Add(this.buttonSubtract);
             this.panel1.Controls.Add(this.buttonAddition);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(-8, -9);
@@ -502,25 +502,25 @@ namespace Calculator
             // 
             // buttonSubstract
             // 
-            this.buttonSubstract.CheckedState.Parent = this.buttonSubstract;
-            this.buttonSubstract.CustomImages.Parent = this.buttonSubstract;
-            this.buttonSubstract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSubstract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSubstract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonSubstract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonSubstract.DisabledState.Parent = this.buttonSubstract;
-            this.buttonSubstract.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(220)))), ((int)(((byte)(165)))));
-            this.buttonSubstract.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
-            this.buttonSubstract.ForeColor = System.Drawing.Color.White;
-            this.buttonSubstract.HoverState.Parent = this.buttonSubstract;
-            this.buttonSubstract.Location = new System.Drawing.Point(296, 502);
-            this.buttonSubstract.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonSubstract.Name = "buttonSubstract";
-            this.buttonSubstract.ShadowDecoration.Parent = this.buttonSubstract;
-            this.buttonSubstract.Size = new System.Drawing.Size(90, 92);
-            this.buttonSubstract.TabIndex = 4;
-            this.buttonSubstract.Text = "−";
-            this.buttonSubstract.Click += new System.EventHandler(this.buttonSubstract_Click);
+            this.buttonSubtract.CheckedState.Parent = this.buttonSubtract;
+            this.buttonSubtract.CustomImages.Parent = this.buttonSubtract;
+            this.buttonSubtract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSubtract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSubtract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonSubtract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonSubtract.DisabledState.Parent = this.buttonSubtract;
+            this.buttonSubtract.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(220)))), ((int)(((byte)(165)))));
+            this.buttonSubtract.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.buttonSubtract.ForeColor = System.Drawing.Color.White;
+            this.buttonSubtract.HoverState.Parent = this.buttonSubtract;
+            this.buttonSubtract.Location = new System.Drawing.Point(296, 502);
+            this.buttonSubtract.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSubtract.Name = "buttonSubtract";
+            this.buttonSubtract.ShadowDecoration.Parent = this.buttonSubtract;
+            this.buttonSubtract.Size = new System.Drawing.Size(90, 92);
+            this.buttonSubtract.TabIndex = 4;
+            this.buttonSubtract.Text = "−";
+            this.buttonSubtract.Click += new System.EventHandler(this.buttonSubtract_Click);
             // 
             // buttonAddition
             // 
@@ -583,7 +583,7 @@ namespace Calculator
         private Guna.UI2.WinForms.Guna2TileButton buttonDelete;
         private Guna.UI2.WinForms.Guna2TileButton buttonDivision;
         private Guna.UI2.WinForms.Guna2TileButton buttonMultiple;
-        private Guna.UI2.WinForms.Guna2TileButton buttonSubstract;
+        private Guna.UI2.WinForms.Guna2TileButton buttonSubtract;
         private Guna.UI2.WinForms.Guna2TileButton buttonAddition;
         private System.Windows.Forms.Label labelExpression;
         private Guna.UI2.WinForms.Guna2TileButton buttonPercent;
