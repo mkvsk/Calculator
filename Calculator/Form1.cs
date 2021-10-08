@@ -17,17 +17,25 @@ namespace Calculator
             InitializeComponent();
         }
 
-
         private void calc(char mathSign)
         {
             if (!String.IsNullOrEmpty(labelExpression.Text))
-            {
+            {   
+                
                 if (String.IsNullOrEmpty(valueTemp))
                 {
                     sb = new StringBuilder();
                     valueTemp = labelExpression.Text;
                     sb.Append(valueTemp);
-                    sb.Append(mathSign);
+
+                    if (mathSign.Equals('%')) 
+                    {
+                        sb.Append('/').Append(100).Append('*').Append(labelExpression.Text);
+                    }
+                    else
+                    {
+                        sb.Append(mathSign);
+                    }
                     isNeedToClear = true;
                 }
                 else
@@ -40,7 +48,7 @@ namespace Calculator
                     sb.Append(mathSign);
                     isNeedToClear = true;
                 }
-            }
+            }           
         }
 
         private void buttonAddition_Click(object sender, EventArgs e)
@@ -64,8 +72,8 @@ namespace Calculator
         }
 
         private void buttonPercent_Click(object sender, EventArgs e)
-        {
-            calc('%');
+        {             
+            calc('%');   
         }
 
         private void buttonResult_Click(object sender, EventArgs e)
@@ -170,8 +178,6 @@ namespace Calculator
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //сама доделай
-            //ладно, сделаю
             if (!String.IsNullOrEmpty(labelExpression.Text))
             {
                 labelExpression.Text = labelExpression.Text.Remove(labelExpression.Text.Length - 1);
@@ -184,6 +190,12 @@ namespace Calculator
             valueTemp = "";
             sb.Clear();
             isNeedToClear = false;
+        }
+
+        private void buttonPoint_Click(object sender, EventArgs e)
+        {
+            checkForClearLabel();
+            labelExpression.Text += ".";
         }
     }
 }
