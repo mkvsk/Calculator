@@ -27,25 +27,21 @@ namespace Calculator
                     sb = new StringBuilder();
                     valueTemp = labelExpression.Text;
                     sb.Append(valueTemp);
-
-                    if (mathSign.Equals('%')) 
-                    {
-                        sb.Append('/').Append(100).Append('*').Append(labelExpression.Text);
-                    }
-                    else
-                    {
-                        sb.Append(mathSign);
-                    }
+                    sb.Append(mathSign);
                     isNeedToClear = true;
                 }
                 else
-                {
+                {   
                     sb.Append(labelExpression.Text);
                     labelExpression.Text = new DataTable().Compute(sb.ToString(), null).ToString();
+                   // if (mathSign.Equals('±'))
                     valueTemp = labelExpression.Text;
                     sb.Clear();
                     sb.Append(valueTemp);
-                    sb.Append(mathSign);
+                    if (!mathSign.Equals('='))
+                    {
+                        sb.Append(mathSign);
+                    }              
                     isNeedToClear = true;
                 }
             }           
@@ -72,31 +68,27 @@ namespace Calculator
         }
 
         private void buttonPercent_Click(object sender, EventArgs e)
-        {             
-            calc('%');   
+        {
+            checkForClearLabel();
+            double percent;
+            string exp;
+            exp = labelExpression.Text;
+            double.TryParse(exp, out percent);
+            percent /= 100;
+            labelExpression.Text = "";
+            labelExpression.Text = percent.ToString();
         }
 
         private void buttonResult_Click(object sender, EventArgs e)
         {
-            calc('\0');
+            calc('=');
         }
 
 
         private void buttonChangeChar_Click(object sender, EventArgs e)
         {
-            // string changeChar;
-            // if (labelExpression.Text[0] != '-')
-            // {
-            //     changeChar = "-";
-            //     changeChar += labelExpression.Text;
-            // }
-            // else
-            // {
-            //     changeChar = "+";
-            //     changeChar += labelExpression.Text;
-            // }
-            //
-            // labelExpression.Text = changeChar;
+            checkForClearLabel();
+            calc('±');
         }
 
         private void checkForClearLabel()
@@ -195,7 +187,16 @@ namespace Calculator
         private void buttonPoint_Click(object sender, EventArgs e)
         {
             checkForClearLabel();
-            labelExpression.Text += ".";
+            labelExpression.Text += ",";
+        }
+
+        private void buttonSqrt_Click(object sender, EventArgs e)
+        {
+            checkForClearLabel();
+            double sqRoot;
+            sqRoot = Convert.ToDouble(labelExpression.Text);
+            double d = Math.Sqrt(sqRoot);
+            labelExpression.Text = d.ToString();
         }
     }
 }

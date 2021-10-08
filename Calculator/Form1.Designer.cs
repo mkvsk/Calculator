@@ -31,6 +31,7 @@ namespace Calculator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonSqrt = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonPercent = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonChangeChar = new Guna.UI2.WinForms.Guna2TileButton();
             this.buttonPoint = new Guna.UI2.WinForms.Guna2TileButton();
@@ -59,6 +60,7 @@ namespace Calculator
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.buttonSqrt);
             this.panel1.Controls.Add(this.buttonPercent);
             this.panel1.Controls.Add(this.buttonChangeChar);
             this.panel1.Controls.Add(this.buttonPoint);
@@ -85,6 +87,27 @@ namespace Calculator
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 615);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonSqrt
+            // 
+            this.buttonSqrt.CheckedState.Parent = this.buttonSqrt;
+            this.buttonSqrt.CustomImages.Parent = this.buttonSqrt;
+            this.buttonSqrt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSqrt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSqrt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonSqrt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonSqrt.DisabledState.Parent = this.buttonSqrt;
+            this.buttonSqrt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(220)))), ((int)(((byte)(165)))));
+            this.buttonSqrt.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
+            this.buttonSqrt.ForeColor = System.Drawing.Color.White;
+            this.buttonSqrt.HoverState.Parent = this.buttonSqrt;
+            this.buttonSqrt.Location = new System.Drawing.Point(197, 84);
+            this.buttonSqrt.Name = "buttonSqrt";
+            this.buttonSqrt.ShadowDecoration.Parent = this.buttonSqrt;
+            this.buttonSqrt.Size = new System.Drawing.Size(60, 60);
+            this.buttonSqrt.TabIndex = 28;
+            this.buttonSqrt.Text = "√";
+            this.buttonSqrt.Click += new System.EventHandler(this.buttonSqrt_Click);
             // 
             // buttonPercent
             // 
@@ -566,6 +589,7 @@ namespace Calculator
         private Guna.UI2.WinForms.Guna2TileButton buttonPercent;
         private Guna.UI2.WinForms.Guna2TileButton buttonChangeChar;
         private Guna.UI2.WinForms.Guna2TileButton buttonPoint;
+        private Guna.UI2.WinForms.Guna2TileButton buttonSqrt;
     }
 }
 
